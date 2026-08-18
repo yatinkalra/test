@@ -1,0 +1,601 @@
+
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>About me — Yatin Kalra · IBM Consulting</title>
+<style>
+/* IBM Plex Sans — system font stack fallback (set IBM Plex Sans in .pptx explicitly) */
+/* IBM Consulting approved palette:
+   Blue 60  #0f62fe   Blue 80  #002d9c   Blue 40  #78a9ff
+   Grey 20  #e0e0e0   Black    #000000   White    #ffffff  */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: #e0e0e0;
+  padding: 40px 0 64px;
+  font-weight: 300;
+  color: #000000;
+}
+
+.deck-nav {
+  max-width: 1100px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 24px;
+  font-size: 12px;
+  color: #57606a;
+}
+.deck-nav .badge {
+  background: #0f62fe;
+  color: #fff;
+  padding: 2px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+.deck-nav .note { margin-left: auto; font-style: italic; font-size: 11px; }
+
+.slide {
+  max-width: 1100px;
+  margin: 0 auto 8px;
+  aspect-ratio: 16/9;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+
+.slide-label {
+  max-width: 1100px;
+  margin: 0 auto 6px;
+  padding: 0 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #57606a;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.slide-label .layout-tag {
+  background: #f7f8fa;
+  border: 1px solid #e5e7eb;
+  padding: 1px 8px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #57606a;
+  letter-spacing: 0.04em;
+  border-radius: 2px;
+  text-transform: none;
+}
+
+.transpose-guide {
+  max-width: 1100px;
+  margin: 0 auto 28px;
+  background: #f7f8fa;
+  border: 1px solid #e5e7eb;
+  border-left: 3px solid #3b82d4;
+  padding: 10px 16px;
+  font-size: 12px;
+  color: #57606a;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+.transpose-guide code {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 2px;
+  padding: 0 4px;
+  font-size: 11px;
+  font-family: "Courier New", monospace;
+}
+
+/* ─── SLIDE 1 — COVER (Blue 80) ─── */
+.slide-cover {
+  background: #002d9c;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 5.5% 7% 4.5%;
+}
+.slide-cover .top-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: #0f62fe;
+}
+.slide-cover .eyebrow {
+  font-size: clamp(9px,1.2vw,14px);
+  font-weight: 400;
+  color: #78a9ff;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 2%;
+}
+.slide-cover .cover-title {
+  font-size: clamp(26px,5vw,62px);
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 1.1;
+  max-width: 68%;
+  margin-bottom: 6%;
+}
+.slide-cover .cover-title strong {
+  font-weight: 600;
+  display: block;
+  font-size: clamp(18px,3.5vw,44px);
+  margin-top: 1%;
+}
+.cover-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.cover-meta {
+  font-size: clamp(8px,0.95vw,11px);
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.8;
+}
+.cover-meta b { font-weight: 600; color: #fff; }
+.logo-ph {
+  border: 1px dashed rgba(255,255,255,0.35);
+  padding: 4px 10px;
+  font-size: clamp(6px,0.75vw,9px);
+  font-weight: 400;
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ─── SLIDE 2 — PRESENTER ─── */
+.slide-presenter {
+  background: #ffffff;
+  display: grid;
+  grid-template-columns: 36% 64%;
+}
+.pres-left {
+  background: #002d9c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 7% 6%;
+  position: relative;
+}
+.photo-ph {
+  width: 50%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 3px solid #78a9ff;
+  background: rgba(120,169,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 7%;
+}
+.photo-ph-inner {
+  width: 38%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(120,169,255,0.3);
+}
+.photo-ph-text {
+  font-size: clamp(6px,0.65vw,7px);
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+.pres-left .p-name {
+  font-size: clamp(11px,1.7vw,20px);
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 3%;
+}
+.pres-left .p-role {
+  font-size: clamp(7px,0.9vw,11px);
+  font-weight: 300;
+  color: #78a9ff;
+  text-align: center;
+  line-height: 1.5;
+}
+.pres-left .p-contact {
+  position: absolute;
+  bottom: 4%;
+  font-size: clamp(6px,0.68vw,7px);
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+  line-height: 1.8;
+}
+.pres-right {
+  padding: 6% 6% 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.hangline {
+  width: 36px;
+  height: 3px;
+  background: #0f62fe;
+  margin-bottom: 4%;
+}
+.sect-head {
+  font-size: clamp(6px,0.75vw,9px);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0f62fe;
+  margin-bottom: 2%;
+}
+.personal-line {
+  font-size: clamp(11px,1.55vw,19px);
+  font-weight: 300;
+  color: #000000;
+  font-style: italic;
+  line-height: 1.25;
+  margin-bottom: 5%;
+}
+.bio-grid { display: grid; gap: 2.5% 0; }
+.bio-label {
+  font-size: clamp(6px,0.72vw,8px);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #0f62fe;
+  margin-bottom: 0.8%;
+}
+.bio-text {
+  font-size: clamp(7px,0.88vw,10px);
+  font-weight: 300;
+  color: #000000;
+  line-height: 1.55;
+}
+.footer-strip {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 1% 6%;
+  background: #f7f8fa;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ibm-logotype-dark {
+  font-size: clamp(6px,0.65vw,7px);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #000000;
+}
+.slide-num-dark { font-size: clamp(6px,0.65vw,7px); font-weight: 300; color: #57606a; }
+
+/* ─── SLIDE 3 — FULL PROFILE ─── */
+.slide-profile {
+  background: #ffffff;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.prof-header {
+  background: #0f62fe;
+  padding: 2% 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ph-name { font-size: clamp(10px,1.35vw,17px); font-weight: 600; color: #fff; }
+.ph-role { font-size: clamp(7px,0.85vw,10px); font-weight: 300; color: rgba(255,255,255,0.8); margin-top: 0.5%; }
+.ph-contact { font-size: clamp(6px,0.72vw,8px); font-weight: 300; color: rgba(255,255,255,0.7); text-align: right; line-height: 1.8; }
+.prof-body { display: grid; grid-template-columns: 50% 50%; overflow: hidden; }
+.prof-col { padding: 2.5% 3.5% 1.5%; border-right: 1px solid #e0e0e0; overflow: hidden; }
+.prof-col:last-child { border-right: none; }
+.sec-bar {
+  background: #0f62fe;
+  color: #fff;
+  font-size: clamp(6px,0.68vw,8px);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 1.2% 2.5%;
+  margin-bottom: 2.5%;
+}
+.sec-bar.b80 { background: #002d9c; }
+.prof-text { font-size: clamp(6px,0.75vw,8px); font-weight: 300; color: #000; line-height: 1.6; margin-bottom: 2.5%; }
+.prof-text b { font-weight: 600; }
+.b-list { list-style: none; padding: 0; margin: 0 0 2% 0; }
+.b-list li {
+  font-size: clamp(6px,0.72vw,8px);
+  font-weight: 300;
+  color: #000;
+  line-height: 1.55;
+  padding: 0.8% 0 0.8% 8px;
+  border-left: 2px solid #0f62fe;
+  margin-bottom: 1.5%;
+}
+.b-list li b { font-weight: 600; color: #0f62fe; }
+.prof-footer {
+  padding: 1% 3.5%;
+  background: #f7f8fa;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ─── SLIDE 4 — AWARDS (Blue 80) ─── */
+.slide-awards {
+  background: #002d9c;
+  display: flex;
+  flex-direction: column;
+}
+.aw-header {
+  padding: 3.5% 6% 2.5%;
+  border-bottom: 1px solid rgba(120,169,255,0.25);
+}
+.aw-eyebrow { font-size: clamp(7px,0.78vw,9px); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #78a9ff; margin-bottom: 1%; }
+.aw-title { font-size: clamp(14px,2vw,26px); font-weight: 300; color: #fff; line-height: 1.2; }
+.aw-title strong { font-weight: 600; }
+.aw-grid { flex: 1; display: grid; grid-template-columns: repeat(2,1fr); gap: 0; padding: 2.5% 5%; align-content: start; overflow: hidden; }
+.aw-card { padding: 2% 3%; border-left: 3px solid #0f62fe; margin-bottom: 2.5%; margin-right: 4%; }
+.aw-year { font-size: clamp(6px,0.7vw,8px); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #78a9ff; margin-bottom: 1%; }
+.aw-title2 { font-size: clamp(8px,0.9vw,10px); font-weight: 600; color: #fff; line-height: 1.3; margin-bottom: 1%; }
+.aw-body { font-size: clamp(7px,0.75vw,8px); font-weight: 300; color: rgba(255,255,255,0.65); line-height: 1.5; }
+.aw-footer {
+  padding: 1.2% 5%;
+  border-top: 1px solid rgba(120,169,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ibm-logotype-light { font-size: clamp(6px,0.65vw,7px); font-weight: 600; letter-spacing: 0.12em; color: rgba(255,255,255,0.5); }
+.slide-num-light { font-size: clamp(6px,0.65vw,7px); font-weight: 300; color: rgba(255,255,255,0.4); }
+
+/* ─── SLIDE 5 — SECTION DIVIDER / Q&A (Blue 60) ─── */
+.slide-divider {
+  background: #0f62fe;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8% 10%;
+  position: relative;
+}
+.slide-divider .top-bar2 {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: #002d9c;
+}
+.div-label { font-size: clamp(7px,0.8vw,9px); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 3%; }
+.div-heading { font-size: clamp(20px,4vw,50px); font-weight: 300; color: #fff; line-height: 1.1; letter-spacing: -0.01em; max-width: 68%; margin-bottom: 4%; }
+.div-heading strong { font-weight: 600; }
+.div-sub { font-size: clamp(9px,1vw,13px); font-weight: 300; color: rgba(255,255,255,0.78); line-height: 1.6; }
+.connect-block {
+  margin-top: 4%;
+  padding: 2.5% 3.5%;
+  border: 1px solid rgba(255,255,255,0.28);
+  max-width: 48%;
+}
+.connect-label { font-size: clamp(7px,0.72vw,8px); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 2%; }
+.connect-line { font-size: clamp(8px,0.9vw,11px); font-weight: 300; color: #fff; line-height: 1.9; }
+.connect-line b { font-weight: 600; }
+.div-footer {
+  position: absolute;
+  bottom: 3%; left: 0; right: 0;
+  padding: 0 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer { margin-top: 32px; padding-top: 14px; border-top: 1px solid #e5e7eb; text-align: center; font-size: 12px; color: #57606a; font-family: "Segoe UI", system-ui, sans-serif; }
+</style>
+</head>
+<body>
+
+<div class="deck-nav">
+  <span class="badge">IBM Consulting</span>
+  <span>About me · Yatin Kalra · 5 slides · one-IBM standard</span>
+  <span class="note">Visual reference — transpose to IBM Consulting starter .pptx</span>
+</div>
+
+
+<div class="slide-label">Slide 1 — Cover <span class="layout-tag">Cover layout · Blue 80 bg · title 84 pt Light · logo placeholder</span></div>
+<div class="slide slide-cover">
+  <div class="top-bar"></div>
+  <div class="eyebrow">IBM Consulting · About me</div>
+  <div class="cover-title">
+    Yatin Kalra
+    <strong>Package Consultant,<br />Salesforce</strong>
+  </div>
+  <div class="cover-footer">
+    <div class="cover-meta">
+      <b>IBM Consulting</b><br />
+      Salesforce.com practice<br />
+      <span style="color:rgba(255,255,255,0.45);font-size:0.88em">Yatin.Kalra1@ibm.com · +91-7988-70-1841</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+      <div class="logo-ph">IBM 8-bar logo<br />insert approved asset (Brand Center)</div>
+      <div style="font-size:clamp(5px,0.6vw,7px);color:rgba(255,255,255,0.35);letter-spacing:0.1em;text-align:right">IBM CONSULTING logotype</div>
+    </div>
+  </div>
+</div>
+<div class="transpose-guide">
+  <strong>In .pptx — Cover layout:</strong> Background Blue 80 <code>#002d9c</code>. Title "Yatin Kalra" 84 pt IBM Plex Sans Light white, sentence case. Subtitle 36 pt Light, role in IBM Plex Sans SemiBold white. Eyebrow (IBM Consulting · About me) 16 pt Light Blue 40 <code>#78a9ff</code>. Insert IBM 8-bar logo (white, Brand Center asset) bottom-right of cover only. Apply IBM Consulting logotype footer globally via Insert → Header &amp; Footer.
+</div>
+
+
+<div class="slide-label">Slide 2 — Presenter bio <span class="layout-tag">"With you today" / Presenter layout · White bg</span></div>
+<div class="slide slide-presenter">
+  <div class="pres-left">
+    <div class="photo-ph">
+      <div class="photo-ph-inner"></div>
+      <div class="photo-ph-text">Headshot<br />placeholder</div>
+    </div>
+    <div class="p-name">Yatin Kalra</div>
+    <div class="p-role">Package Consultant, Salesforce.com<br />IBM Consulting</div>
+    <div class="p-contact">
+      Yatin.Kalra1@ibm.com<br />
+      +91-7988-70-1841<br />
+      LinkedIn: yatin-kalra
+    </div>
+  </div>
+  <div class="pres-right">
+    <div class="hangline"></div>
+    <div class="sect-head">About me</div>
+    <div class="personal-line">"Explorer. Epicure. Sacred."</div>
+    <div class="bio-grid">
+      <div>
+        <div class="bio-label">What I do</div>
+        <div class="bio-text">Design and scale simple, secure, and maintainable solutions.</div>
+      </div>
+      <div>
+        <div class="bio-label">What I value</div>
+        <div class="bio-text">Cyber security · low-code innovation · easy-to-maintain solutions · Indian classical music.</div>
+      </div>
+      <div>
+        <div class="bio-label">Core interests</div>
+        <div class="bio-text">Cyber-trusted security · CRM · Agentic AI</div>
+      </div>
+      <div>
+        <div class="bio-label">Recognition</div>
+        <div class="bio-text">IBM Tech Premier Technical Contributors Award · Best Young Talent, Salesforce India CIC · Intern Delivering Excellence — Matthew Candy, GMP, iX</div>
+      </div>
+    </div>
+    <div class="footer-strip">
+      <span class="ibm-logotype-dark">IBM CONSULTING</span>
+      <span class="slide-num-dark">2</span>
+    </div>
+  </div>
+</div>
+<div class="transpose-guide">
+  <strong>In .pptx — Presenter layout:</strong> Left panel Blue 80 <code>#002d9c</code>; headshot in circular image placeholder (do not hand-build oval); name 28 pt SemiBold white; role 16 pt Light Blue 40 <code>#78a9ff</code>. Right panel white; hangline Blue 60 <code>#0f62fe</code> (3 px); category labels 10 pt SemiBold Blue 60 uppercase; body 16 pt Light black. Footer: IBM Consulting logotype globally applied.
+</div>
+
+
+<div class="slide-label">Slide 3 — Full profile <span class="layout-tag">Two-column text layout · White bg · Blue 60 + Blue 80 section bars</span></div>
+<div class="slide slide-profile">
+  <div class="prof-header">
+    <div>
+      <div class="ph-name">Yatin Kalra</div>
+      <div class="ph-role">Package Consultant, Salesforce.com · IBM Consulting</div>
+    </div>
+    <div class="ph-contact">Yatin.Kalra1@ibm.com<br />+91-7988-70-1841 · LinkedIn: yatin-kalra</div>
+  </div>
+  <div class="prof-body">
+    <div class="prof-col">
+      <div class="sec-bar">Summary</div>
+      <div class="prof-text">Consulting professional with a demonstrated record of impactful results in customer experience transformation with Salesforce — a unique blend of technical expertise and business strategy. BSc Computer Science; MBA in CRM (undertaking).</div>
+      <div class="prof-text">Experienced across <b>Sales and Service Cloud</b> for opportunity management and case resolution; <b>Experience Cloud</b> for GenAI-enabled accessible portals (top 3% globally); <b>Field Service Lightning</b> for resource management and ERP-integrated overtime tracking.</div>
+      <div class="prof-text">Solid background in cyber-trusted security — threat intelligence, password management, security analysis — with contributions to research papers and a book chapter on making technology safer.</div>
+      <div class="sec-bar" style="margin-top:3%">Deliveries</div>
+      <ul class="b-list">
+        <li><b>Field services</b> — end-to-end FSL delivery</li>
+        <li><b>Media industry</b> — Salesforce CX transformation</li>
+        <li><b>Financial services</b> — CRM and service cloud delivery</li>
+      </ul>
+    </div>
+    <div class="prof-col">
+      <div class="sec-bar b80">Skills and expertise</div>
+      <ul class="b-list">
+        <li>Salesforce: Sales Cloud · Service Cloud · Experience Cloud · FSL · Marketing Cloud</li>
+        <li>Agentic AI / low-code innovation</li>
+        <li>Cyber-trusted security · threat intelligence</li>
+        <li>ERP integration · process automation</li>
+        <li>CRM strategy · customer experience design</li>
+        <li>Accessibility — top 3% WCAG-compliant portal</li>
+      </ul>
+      <div class="sec-bar b80" style="margin-top:3%">Industry experience</div>
+      <ul class="b-list">
+        <li>Field services and utilities</li>
+        <li>Media and entertainment</li>
+        <li>Financial services</li>
+      </ul>
+      <div class="sec-bar" style="margin-top:3%">Awards and recognition</div>
+      <ul class="b-list">
+        <li><b>Overall Rank 1</b> — Agentforce League 20/26, Salesforce</li>
+        <li><b>IBM Tech 2024</b> — Premier Technical Contributors Award</li>
+        <li><b>Best Young Talent 2023</b> — Salesforce team, India CIC</li>
+        <li><b>Intern Delivering Excellence</b> — Matthew Candy, GMP, iX</li>
+      </ul>
+    </div>
+  </div>
+  <div class="prof-footer">
+    <span class="ibm-logotype-dark">IBM CONSULTING</span>
+    <span class="slide-num-dark">3</span>
+  </div>
+</div>
+<div class="transpose-guide">
+  <strong>In .pptx — Two-column text layout:</strong> Header bar Blue 60 <code>#0f62fe</code>, name 18 pt SemiBold white, role 12 pt Light white. Section bars: Blue 60 (summary, deliveries) or Blue 80 <code>#002d9c</code> (skills, industry, awards), 9 pt SemiBold white uppercase. Body: 14 pt Light black. Bullet accent: 16 pt SemiBold Blue 60 for bold labels. Sentence case throughout.
+</div>
+
+
+<div class="slide-label">Slide 4 — Awards and recognition <span class="layout-tag">Dark content layout · Blue 80 bg · Blue 60 card accents</span></div>
+<div class="slide slide-awards">
+  <div class="aw-header">
+    <div class="aw-eyebrow">Recognition</div>
+    <div class="aw-title">Awards and <strong>recognition</strong></div>
+  </div>
+  <div class="aw-grid">
+    <div class="aw-card">
+      <div class="aw-year">2024 · Salesforce</div>
+      <div class="aw-title2">Overall Rank 1 — Agentforce League</div>
+      <div class="aw-body">Ranked first overall in the Agentforce League 20/26 competition run by Salesforce, competing globally.</div>
+    </div>
+    <div class="aw-card">
+      <div class="aw-year">2024 · IBM Tech</div>
+      <div class="aw-title2">Premier Technical Contributors Award</div>
+      <div class="aw-body">IBM's flagship recognition for outstanding technical contribution and delivery excellence.</div>
+    </div>
+    <div class="aw-card">
+      <div class="aw-year">2023 · Salesforce India CIC</div>
+      <div class="aw-title2">Best Young Talent</div>
+      <div class="aw-body">Recognised as best young talent within the Salesforce team at IBM Consulting India CIC.</div>
+    </div>
+    <div class="aw-card">
+      <div class="aw-year">IBM Consulting · iX</div>
+      <div class="aw-title2">Intern Delivering Excellence</div>
+      <div class="aw-body">Personal recognition by Matthew Candy, Global Managing Partner, IBM iX, for exceptional impact as an intern.</div>
+    </div>
+  </div>
+  <div class="aw-footer">
+    <span class="ibm-logotype-light">IBM CONSULTING</span>
+    <span class="slide-num-light">4</span>
+  </div>
+</div>
+<div class="transpose-guide">
+  <strong>In .pptx — Dark content layout:</strong> Background Blue 80 <code>#002d9c</code>. Eyebrow 10 pt SemiBold Blue 40 <code>#78a9ff</code> uppercase. Title "Awards and recognition" 36 pt Light white, sentence case. Cards: left border 3 pt Blue 60 <code>#0f62fe</code>; year 9 pt SemiBold Blue 40; award title 12 pt SemiBold white; body 11 pt Light white 65% opacity. Footer: IBM Consulting logotype white, globally applied.
+</div>
+
+
+<div class="slide-label">Slide 5 — Q&amp;A / close <span class="layout-tag">Section divider layout · Blue 60 bg · title 68 pt · max 3 lines</span></div>
+<div class="slide slide-divider">
+  <div class="top-bar2"></div>
+  <div class="div-label">Questions</div>
+  <div class="div-heading">Any questions?</div>
+  <div class="div-sub">Don't hesitate to get in touch.</div>
+  <div class="connect-block">
+    <div class="connect-label">Connect with me</div>
+    <div class="connect-line">
+      <b>Email</b>   Yatin.Kalra1@ibm.com<br />
+      <b>Phone</b>   +91-7988-70-1841<br />
+      <b>LinkedIn</b>  linkedin.com/in/yatin-kalra
+    </div>
+  </div>
+  <div class="div-footer">
+    <span class="ibm-logotype-light">IBM CONSULTING</span>
+    <span class="slide-num-light">5</span>
+  </div>
+</div>
+<div class="transpose-guide">
+  <strong>In .pptx — Section divider layout:</strong> Background Blue 60 <code>#0f62fe</code>. Heading "Any questions?" 68 pt IBM Plex Sans Light white, sentence case (max 3 lines per divider rules). Sub-text 20 pt Light white 80%. Connect block: 14 pt Light white inside a 1 pt white 30% bordered box. Footer: IBM Consulting logotype white, globally applied. IBM 8-bar logo not repeated here (cover + end only).
+</div>
+
+<footer><p>Made with IBM Bob</p></footer>
+</body>
+</html>
